@@ -25,14 +25,8 @@ If you're confused, think of it this way: `_curriedSum` keeps collecting
 arguments and returning itself until it has enough arguments, at which point it
 actually does the required work of summing.
 
-
 Example:
 // 1
-const sum = curriedSum(4); // returns a function
-sum(5) // returns a function
-sum(20) // returns a function
-sum(30) // returns a function
-sum(20); // => returns 75
 
 // 2
 // this function can also be invoked like this:
@@ -43,8 +37,37 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
   be useful
 ***********************************************************************/
 
-// Your code here 
+const curriedSum = (num, arr = []) => {
+  if (num <= 0) return null;
+  if (arr.length === num) return arr.reduce((acc, val) => acc + val)
 
+  return function (num2) {
+    arr.push(num2);
+    return curriedSum(num, arr);
+  }
+}
+
+
+
+//   let arr = [];
+//   return function func(num2) {
+//     if (arr.length - 1 < num) {
+//       arr.push(num2)
+//     } else {
+//       console.log(arr)
+//       return arr.reduce((acc, val) => acc + val)
+//     }
+
+//   }
+// }
+
+// const sum = curriedSum(4); // returns a function
+// sum(5) // returns a function
+// sum(20) // returns a function
+// sum(30) // returns a function
+// sum(20); // => returns 75
+const sum = curriedSum(3)(2)(1)(7);
+console.log(sum)
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {

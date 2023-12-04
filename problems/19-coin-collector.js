@@ -25,8 +25,26 @@ Example 3:
 
 ***********************************************************************/
 
-// Your code here 
+const coinCollector = (count) => {
+  let arr = [];
+  return function ret(coin) {
 
+    if (arr.length -1 < count) {
+      arr.push(coin);
+    }
+
+    if (arr.length === count) {
+      return arr;
+    } else {
+      return ret
+    }
+  }
+}
+
+let threeCoins = coinCollector(3); // returns a function
+threeCoins(25); // returns a function
+threeCoins(5); // returns a function
+console.log(threeCoins(10)); // prints [ 25, 5, 10 ]
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
