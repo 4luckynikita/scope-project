@@ -17,7 +17,17 @@ sandwich2("pb") // => "One sandwich with tomato and pb"
 
 ***********************************************************************/
 
-// Your code here 
+const sandwichMaker = () => {
+  let arr = [];
+  return function sandwich(food) {
+    arr.push(food);
+    let str = 'One sandwich with tomato';
+    for (let i = 0; i < arr.length; i++) {
+      str += ' and ' + arr[i]
+    }
+    return str;
+  }
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
