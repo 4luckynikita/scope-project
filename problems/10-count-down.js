@@ -29,6 +29,13 @@ Example 4:
 ***********************************************************************/
 
 // Your code here 
+const countDownTimer = (num) => {
+  if (num===0) return "Happy New Year!";
+  return function (){
+    num--;
+    return countDownTimer(num);
+  }
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

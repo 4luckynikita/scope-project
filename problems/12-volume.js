@@ -14,6 +14,14 @@ function returned by recVolume should continue to return the original volume.
 ***********************************************************************/
 
 // Your code here 
+const recVolume = (height) => {
+  let arr = [height];
+  return function returner(num){
+    arr.push(num);
+    if (arr.length >= 3) return arr[0]*arr[1]*arr[2];
+    return returner;
+  }
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

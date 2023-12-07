@@ -23,6 +23,15 @@ console.log(smoothie2("pineapple"));
 ***********************************************************************/
 
 // Your code here 
+const smoothieMachine = (...ingredients) => {
+  //let ing = ingredients.join(" and ");
+  //let string = `I'm having a smoothie with ${ing}`
+  return function (...ing2){
+    //if (ing !== "") string += " and ";
+    ingredients = [...ingredients, ...ing2];
+    return "I'm having a smoothie with " + ingredients.join(" and ");
+  }
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
